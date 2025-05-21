@@ -12,7 +12,7 @@ import ru.ifellow.jschool.dto.CreateRequestDto;
 import java.util.List;
 import java.util.UUID;
 
-@FeignClient(name = "book-management-service", url = "${feign.book-management-service.url}")
+@FeignClient(name = "transfer-book-client", url = "${feign.book-management-service.url}")
 public interface TransferBooksClient {
 
     @PutMapping("api/v1/transferBooks/moveRequestedBooks")
@@ -21,5 +21,5 @@ public interface TransferBooksClient {
 
     @PutMapping("api/v1/transferBooks/books-transfer")
     @ResponseStatus(HttpStatus.OK)
-    public void moveBooks (@PathVariable UUID bookStorageId, @PathVariable UUID bookShopId, @RequestBody List<BookInfoDto> bookInfoDtos);
+    void moveBooks(@PathVariable UUID bookStorageId, @PathVariable UUID bookShopId, @RequestBody List<BookInfoDto> bookInfoDtos);
 }

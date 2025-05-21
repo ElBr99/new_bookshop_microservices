@@ -10,7 +10,7 @@ import ru.ifellow.jschool.dto.BookInfoDto;
 import java.util.List;
 import java.util.UUID;
 
-@FeignClient(name = "book-management-service", url = "${feign.book-management-service.url}")
+@FeignClient(name = "offline-book-shop-client", url = "${feign.book-management-service.url}")
 public interface OfflineBookShopClient {
 
     @GetMapping("api/v1/book-shops/{shopId}/assortment")

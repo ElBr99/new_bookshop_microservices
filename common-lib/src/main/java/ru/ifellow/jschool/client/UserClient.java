@@ -10,7 +10,7 @@ import ru.ifellow.jschool.dto.GetUserDto;
 
 import java.util.UUID;
 
-@FeignClient(name = "user-service", url = "${feign.user-service.url}")
+@FeignClient(name = "user-client", url = "${feign.user-service.url}")
 public interface UserClient {
 
     @GetMapping("api/v1/users")

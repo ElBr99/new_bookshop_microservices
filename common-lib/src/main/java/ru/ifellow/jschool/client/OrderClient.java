@@ -14,7 +14,7 @@ import ru.ifellow.jschool.dto.OrderDto;
 import java.util.List;
 import java.util.UUID;
 
-@FeignClient(name = "book-management-service", url = "${feign.order-service.url}")
+@FeignClient(name = "order-client", url = "${feign.order-service.url}")
 public interface OrderClient {
 
     @PostMapping("/api/v1/orders")

@@ -18,7 +18,7 @@ import ru.ifellow.jschool.dto.CreateBookInfoDto;
 import java.util.List;
 import java.util.UUID;
 
-@FeignClient(name = "book-management-service", url = "${feign.book-management-service.url}")
+@FeignClient(name = "book-storage-client", url = "${feign.book-management-service.url}")
 public interface BookStorageClient {
 
     @GetMapping("api/v1/book-storages/{bookStorageId}/assortment")

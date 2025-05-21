@@ -8,7 +8,7 @@ import ru.ifellow.jschool.dto.FavouriteBookDto;
 import java.util.List;
 import java.util.UUID;
 
-@FeignClient(name = "book-management-service", url = "${feign.book-management-service.url}")
+@FeignClient(name = "favourite-book-client", url = "${feign.book-management-service.url}")
 public interface FavouriteBookClient {
 
     @PostMapping("/api/v1/favourites")

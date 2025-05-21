@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-@FeignClient(name = "book-management-service", url = "${feign.book-management-service.url}")
+@FeignClient(name = "book-info-client", url = "${feign.book-management-service.url}")
 public interface BookInfoClient {
 
     @GetMapping("api/v1/book-infos/filter")
