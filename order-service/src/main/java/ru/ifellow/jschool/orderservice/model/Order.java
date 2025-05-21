@@ -28,7 +28,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor
 @Entity
-@ToString(exclude = {"customer", "storageId", "customerBox"})
+@ToString(exclude = {"customerBox"})
 @Table(name = "orders")
 public class Order {
 

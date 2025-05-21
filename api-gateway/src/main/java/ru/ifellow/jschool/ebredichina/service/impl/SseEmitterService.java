@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
+import ru.ifellow.jschool.dto.GetUserDto;
 import ru.ifellow.jschool.ebredichina.service.AuthenticationService;
 
 import java.util.Map;

@@ -2,6 +2,7 @@ package ru.ifellow.jschool.ebredichina.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.ifellow.jschool.client.OrderClient;
 import ru.ifellow.jschool.dto.CreateChequeDto;
 import ru.ifellow.jschool.dto.CreateOrderDto;
 import ru.ifellow.jschool.dto.OnlineOrderDto;
@@ -14,34 +15,36 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class OrderClientServiceImpl implements OrderClientService {
 
+    private final OrderClient orderClient;
+
 
     @Override
     public OnlineOrderDto registerOrderOnline(CreateOrderDto createOrderDto) {
-        return null;
+        return orderClient.registerOrderOnline(createOrderDto);
     }
 
     @Override
     public CreateChequeDto acceptPurchaseOnline(UUID orderId, CreateOrderDto createOrderDto) {
-        return null;
+        return orderClient.acceptPurchase(orderId, createOrderDto);
     }
 
     @Override
     public CreateChequeDto doPurchaseOffline(UUID shopId, CreateOrderDto createOrderDto) {
-        return null;
+        return orderClient.doOfflinePurchase(shopId, createOrderDto);
     }
 
     @Override
     public List<OrderDto> findByCustomerId(UUID customerId) {
-        return null;
+        return orderClient.viewMyOrders(customerId);
     }
 
     @Override
     public OrderDto findByOrderId(UUID orderId) {
-        return null;
+        return orderClient.viewCustomerOrder(orderId);
     }
 
     @Override
     public List<OrderDto> getOrders() {
-        return null;
+        return orderClient.viewAllOrders();
     }
 }

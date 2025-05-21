@@ -2,7 +2,6 @@ package ru.ifellow.ebredichina.userserice.model;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -13,7 +12,6 @@ import java.util.UUID;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @DiscriminatorValue("Customer")
 public class Customer extends User {
