@@ -1,9 +1,9 @@
 package ru.ifellow.jschool.ebredichina.service;
 
-import ru.ifellow.jschool.ebredichina.dto.BookInfoDto;
-import ru.ifellow.jschool.ebredichina.dto.CreateBookInfoDto;
-import ru.ifellow.jschool.ebredichina.dto.OfflineBookShopDto;
 
+import ru.ifellow.jschool.dto.BookInfoDto;
+import ru.ifellow.jschool.dto.CreateBookInfoDto;
+import ru.ifellow.jschool.dto.OfflineBookShopDto;
 import java.util.List;
 import java.util.UUID;
 

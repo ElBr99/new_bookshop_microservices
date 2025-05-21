@@ -9,9 +9,9 @@ import org.springframework.security.authorization.AuthorizationDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import ru.ifellow.jschool.ebredichina.exception.BookNotFoundException;
-import ru.ifellow.jschool.ebredichina.exception.BookStorageNotFoundException;
-import ru.ifellow.jschool.ebredichina.exception.OfflineBookShopNotFoundException;
+import ru.ifellow.jschool.exception.BookNotFoundException;
+import ru.ifellow.jschool.exception.BookStorageNotFoundException;
+import ru.ifellow.jschool.exception.OfflineBookShopNotFoundException;
 
 import java.util.ArrayList;
 import java.util.HashMap;

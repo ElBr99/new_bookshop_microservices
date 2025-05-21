@@ -36,9 +36,4 @@ public class BookInfo {
     @JoinColumn(name = "offline_book_shop_id")
     private OfflineBookShop offlineBookShop;
 
-
-    public BigDecimal countBookPrice(BigDecimal price, int amount) {
-        return price.multiply(BigDecimal.valueOf(amount));
-    }
-
 }

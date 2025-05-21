@@ -7,7 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
-
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -58,7 +58,6 @@ public abstract class AbsStorage implements StorageEntity {
 
         return bookInfo1Title.equals(bookInfoTitle) && bookInfo1PublishingYear.equals(bookInfoPublishingYear);
     }
-
 
     public void removeBook(UUID id, Integer amountForDelete) {
 

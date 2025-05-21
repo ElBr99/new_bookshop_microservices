@@ -1,13 +1,12 @@
 package ru.ifellow.jschool.ebredichina.service;
 
-import ru.ifellow.jschool.ebredichina.dto.BookInfoDto;
-import ru.ifellow.jschool.ebredichina.dto.BookStorageDto;
-import ru.ifellow.jschool.ebredichina.dto.CreateBookInfoDto;
-
+import ru.ifellow.jschool.dto.BookInfoDto;
+import ru.ifellow.jschool.dto.BookStorageDto;
+import ru.ifellow.jschool.dto.CreateBookInfoDto;
 import java.util.List;
 import java.util.UUID;
 
-public interface BookStorageClientService  {
+public interface BookStorageClientService {
 
     List<BookInfoDto> viewCurrentAssortment(UUID bookStorageId);
 

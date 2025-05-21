@@ -2,8 +2,9 @@ package ru.ifellow.ebredichina.bookservice.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import ru.ifellow.ebredichina.bookservice.dto.OfflineBookShopDto;
+
 import ru.ifellow.ebredichina.bookservice.model.OfflineBookShop;
+import ru.ifellow.jschool.dto.OfflineBookShopDto;
 
 
 @Mapper(componentModel = "spring", uses = {ToBookInfoDtoMapper.class})

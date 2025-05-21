@@ -2,11 +2,11 @@ package ru.ifellow.ebredichina.userserice.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import ru.ifellow.ebredichina.userserice.dto.CreateCustomerDto;
-import ru.ifellow.ebredichina.userserice.dto.CreateEmployeeDto;
-import ru.ifellow.ebredichina.userserice.dto.GetUserDto;
 import ru.ifellow.ebredichina.userserice.model.Customer;
 import ru.ifellow.ebredichina.userserice.model.User;
+import ru.ifellow.jschool.dto.CreateCustomerDto;
+import ru.ifellow.jschool.dto.CreateEmployeeDto;
+import ru.ifellow.jschool.dto.GetUserDto;
 
 @Mapper(componentModel = "spring")
 public abstract class UserMapper {
@@ -17,9 +17,9 @@ public abstract class UserMapper {
     @Mapping(target = "name", source = "name")
     public abstract Customer fromCreateDtoCustomerToUser(CreateCustomerDto createCustomerDto);
 
-    public abstract GetUserDto fromUserToGetUserDto (User user);
+    public abstract GetUserDto fromUserToGetUserDto(User user);
 
-    public abstract User fromCreateEmployeeDtoToUser (CreateEmployeeDto createEmployeeDto);
+    public abstract User fromCreateEmployeeDtoToUser(CreateEmployeeDto createEmployeeDto);
 
 
 }

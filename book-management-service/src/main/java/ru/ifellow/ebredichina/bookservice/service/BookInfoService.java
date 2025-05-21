@@ -1,8 +1,10 @@
 package ru.ifellow.ebredichina.bookservice.service;
 
-import ru.ifellow.ebredichina.bookservice.dto.BookFinderDto;
-import ru.ifellow.ebredichina.bookservice.dto.BookInfoDto;
+
+
 import ru.ifellow.ebredichina.bookservice.model.BookInfo;
+import ru.ifellow.jschool.dto.BookFinderDto;
+import ru.ifellow.jschool.dto.BookInfoDto;
 
 import java.util.List;
 import java.util.Map;

@@ -2,10 +2,14 @@ package ru.ifellow.ebredichina.bookservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
-import ru.ifellow.ebredichina.bookservice.dto.CreateRequestDto;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 import ru.ifellow.ebredichina.bookservice.service.TransferBooksService;
-
+import ru.ifellow.jschool.dto.CreateRequestDto;
 import java.util.List;
 import java.util.UUID;
 

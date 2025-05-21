@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import ru.ifellow.ebredichina.bookservice.exception.ExceptionThrower;
 import ru.ifellow.ebredichina.bookservice.model.AbsStorage;
 import ru.ifellow.ebredichina.bookservice.model.BookInfo;
-
 import java.util.List;
 import java.util.UUID;
 
@@ -73,4 +72,8 @@ public class CommonStorageService<T extends AbsStorage> {
                 .getAmount();
     }
 
+    void removeBookFromStorage(UUID onlinePurchaseId, UUID bookId, int amount) {
+        commonRepository.findById(onlinePurchaseId)
+                .ifPresent(s -> s.removeBook(bookId, amount));
+    }
 }

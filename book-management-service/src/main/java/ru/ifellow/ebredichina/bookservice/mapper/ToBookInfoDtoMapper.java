@@ -2,8 +2,9 @@ package ru.ifellow.ebredichina.bookservice.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import ru.ifellow.ebredichina.bookservice.dto.BookInfoDto;
+
 import ru.ifellow.ebredichina.bookservice.model.BookInfo;
+import ru.ifellow.jschool.dto.BookInfoDto;
 
 
 import java.util.List;

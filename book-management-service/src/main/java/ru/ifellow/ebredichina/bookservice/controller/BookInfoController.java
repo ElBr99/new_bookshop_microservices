@@ -3,11 +3,15 @@ package ru.ifellow.ebredichina.bookservice.controller;
 import jakarta.validation.constraints.Pattern;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
-import ru.ifellow.ebredichina.bookservice.dto.BookFinderDto;
-import ru.ifellow.ebredichina.bookservice.dto.BookInfoDto;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import ru.ifellow.ebredichina.bookservice.service.BookInfoService;
-
+import ru.ifellow.jschool.dto.BookFinderDto;
+import ru.ifellow.jschool.dto.BookInfoDto;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -18,7 +22,6 @@ import java.util.UUID;
 public class BookInfoController {
 
     private final BookInfoService bookInfoService;
-
 
     @GetMapping("/filter")
     public List<BookInfoDto> getBook(@ModelAttribute @Validated BookFinderDto bookFinderDto) {
@@ -37,7 +40,7 @@ public class BookInfoController {
     }
 
     @GetMapping("/{id}")
-    public BookInfoDto  getBookById (@PathVariable ("id")UUID id) {
+    public BookInfoDto getBookById(@PathVariable("id") UUID id) {
         return bookInfoService.getBookInfo(id);
     }
 

@@ -6,11 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import ru.ifellow.jschool.ebredichina.client.UserClient;
-import ru.ifellow.jschool.ebredichina.dto.CreateCustomerDto;
-import ru.ifellow.jschool.ebredichina.dto.userClientDto.GetUserDto;
+import ru.ifellow.jschool.client.UserClient;
+import ru.ifellow.jschool.dto.CreateCustomerDto;
+import ru.ifellow.jschool.dto.GetUserDto;
 import ru.ifellow.jschool.ebredichina.service.UserClientService;
-
 import java.util.UUID;
 
 @Service

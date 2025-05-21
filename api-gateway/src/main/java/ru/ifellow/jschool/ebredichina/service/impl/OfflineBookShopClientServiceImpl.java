@@ -3,16 +3,14 @@ package ru.ifellow.jschool.ebredichina.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
-import ru.ifellow.jschool.ebredichina.client.OfflineBookShopClient;
-import ru.ifellow.jschool.ebredichina.dto.BookInfoDto;
-import ru.ifellow.jschool.ebredichina.dto.CreateBookInfoDto;
-import ru.ifellow.jschool.ebredichina.dto.OfflineBookShopDto;
+import ru.ifellow.jschool.client.OfflineBookShopClient;
+import ru.ifellow.jschool.dto.BookInfoDto;
+import ru.ifellow.jschool.dto.CreateBookInfoDto;
+import ru.ifellow.jschool.dto.OfflineBookShopDto;
 import ru.ifellow.jschool.ebredichina.service.OfflineBookShopClientService;
-
 import java.util.List;
 import java.util.UUID;
 
-@Lazy
 @Service
 @RequiredArgsConstructor
 public class OfflineBookShopClientServiceImpl implements OfflineBookShopClientService {

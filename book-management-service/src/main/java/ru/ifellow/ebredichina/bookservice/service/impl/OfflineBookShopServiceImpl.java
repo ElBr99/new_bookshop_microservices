@@ -4,15 +4,18 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
-import ru.ifellow.ebredichina.bookservice.dto.BookInfoDto;
-import ru.ifellow.ebredichina.bookservice.dto.CreateBookInfoDto;
-import ru.ifellow.ebredichina.bookservice.dto.OfflineBookShopDto;
+
+
+
 import ru.ifellow.ebredichina.bookservice.mapper.OfflineBookShopMapper;
 import ru.ifellow.ebredichina.bookservice.mapper.ToBookInfoDtoMapper;
 import ru.ifellow.ebredichina.bookservice.mapper.ToBookInfoMapper;
 import ru.ifellow.ebredichina.bookservice.model.BookInfo;
 import ru.ifellow.ebredichina.bookservice.model.OfflineBookShop;
 import ru.ifellow.ebredichina.bookservice.service.StorageService;
+import ru.ifellow.jschool.dto.BookInfoDto;
+import ru.ifellow.jschool.dto.CreateBookInfoDto;
+import ru.ifellow.jschool.dto.OfflineBookShopDto;
 
 import java.util.List;
 import java.util.UUID;
@@ -62,6 +65,11 @@ public class OfflineBookShopServiceImpl implements StorageService<OfflineBookSho
     @Override
     public int getBookAmount(UUID bookShopId, UUID bookId) {
         return offlineBookShopDtoCommonStorageService.getBookAmount(bookShopId, bookId);
+    }
+
+    @Override
+    public void removeBook(UUID onlinePurchaseId, UUID bookId, int amount) {
+        offlineBookShopDtoCommonStorageService.removeBookFromStorage(onlinePurchaseId, bookId, amount);
     }
 
 }

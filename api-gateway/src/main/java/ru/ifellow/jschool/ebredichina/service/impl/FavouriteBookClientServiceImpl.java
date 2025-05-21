@@ -3,9 +3,11 @@ package ru.ifellow.jschool.ebredichina.service.impl;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.ifellow.jschool.ebredichina.client.FavouriteBookClient;
-import ru.ifellow.jschool.ebredichina.dto.FavouriteBookDto;
-import ru.ifellow.jschool.ebredichina.dto.userClientDto.GetUserDto;
+
+
+import ru.ifellow.jschool.client.FavouriteBookClient;
+import ru.ifellow.jschool.dto.FavouriteBookDto;
+import ru.ifellow.jschool.dto.GetUserDto;
 import ru.ifellow.jschool.ebredichina.service.AuthenticationService;
 import ru.ifellow.jschool.ebredichina.service.FavouriteBookClientService;
 import ru.ifellow.jschool.ebredichina.service.UserClientService;

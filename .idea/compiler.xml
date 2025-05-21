@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Annotation profile for api-gateway" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -14,6 +15,12 @@
         </processorPath>
         <module name="api-gateway" />
       </profile>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="common-lib" />
+      </profile>
       <profile name="Annotation profile for book-management-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -23,6 +30,7 @@
         </processorPath>
         <module name="book-management-service" />
         <module name="user-service" />
+        <module name="order-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -30,6 +38,8 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="book-management-service" options="-parameters" />
+      <module name="common-lib" options="-parameters" />
+      <module name="order-service" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>
   </component>

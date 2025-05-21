@@ -3,13 +3,15 @@ package ru.ifellow.ebredichina.bookservice.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.ifellow.ebredichina.bookservice.dto.BookFinderDto;
-import ru.ifellow.ebredichina.bookservice.dto.BookInfoDto;
-import ru.ifellow.ebredichina.bookservice.exception.BookNotFoundException;
+
+
 import ru.ifellow.ebredichina.bookservice.mapper.ToBookInfoDtoMapper;
 import ru.ifellow.ebredichina.bookservice.model.BookInfo;
 import ru.ifellow.ebredichina.bookservice.repository.BookInfoRepository;
 import ru.ifellow.ebredichina.bookservice.service.BookInfoService;
+import ru.ifellow.jschool.dto.BookFinderDto;
+import ru.ifellow.jschool.dto.BookInfoDto;
+import ru.ifellow.jschool.exception.BookNotFoundException;
 
 
 import java.util.List;

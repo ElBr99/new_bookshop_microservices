@@ -4,11 +4,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.ifellow.jschool.ebredichina.dto.userClientDto.GetUserDto;
+
+import ru.ifellow.jschool.dto.GetUserDto;
 import ru.ifellow.jschool.ebredichina.jwt.AuthRequest;
 import ru.ifellow.jschool.ebredichina.jwt.JwtService;
 import ru.ifellow.jschool.ebredichina.service.AuthenticationService;
@@ -44,23 +44,6 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     @Override
     public GetUserDto getAuthenticatedUser(String username) {
         return userService.getUser(username);
-    }
-
-    @Override
-    public void setAuthenticatedUser(GetUserDto user) {
-        SecurityContext securityContext = new SecurityContext() {
-            @Override
-            public Authentication getAuthentication() {
-                return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getEmail(), user.getPassword()));
-            }
-
-            @Override
-            public void setAuthentication(Authentication authentication) {
-                authentication.setAuthenticated(true);
-            }
-        };
-
-        SecurityContextHolder.setContext(securityContext);
     }
 
 }

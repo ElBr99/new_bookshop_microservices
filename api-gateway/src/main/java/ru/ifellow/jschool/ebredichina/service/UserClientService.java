@@ -1,8 +1,7 @@
 package ru.ifellow.jschool.ebredichina.service;
 
-import ru.ifellow.jschool.ebredichina.dto.CreateCustomerDto;
-import ru.ifellow.jschool.ebredichina.dto.userClientDto.GetUserDto;
-
+import ru.ifellow.jschool.dto.CreateCustomerDto;
+import ru.ifellow.jschool.dto.GetUserDto;
 import java.util.UUID;
 
 public interface UserClientService {

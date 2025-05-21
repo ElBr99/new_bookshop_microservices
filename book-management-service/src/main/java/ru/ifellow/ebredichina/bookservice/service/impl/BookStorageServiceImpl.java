@@ -3,11 +3,6 @@ package ru.ifellow.ebredichina.bookservice.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.ifellow.ebredichina.bookservice.dto.BookInfoDto;
-import ru.ifellow.ebredichina.bookservice.dto.BookStorageDto;
-import ru.ifellow.ebredichina.bookservice.dto.BuyBookDto;
-import ru.ifellow.ebredichina.bookservice.dto.CreateBookInfoDto;
-import ru.ifellow.ebredichina.bookservice.exception.BookStorageNotFoundException;
 import ru.ifellow.ebredichina.bookservice.mapper.BookStorageMapper;
 import ru.ifellow.ebredichina.bookservice.mapper.ToBookInfoDtoMapper;
 import ru.ifellow.ebredichina.bookservice.mapper.ToBookInfoMapper;
@@ -17,8 +12,11 @@ import ru.ifellow.ebredichina.bookservice.projections.BookStorageProjection;
 import ru.ifellow.ebredichina.bookservice.repository.BookStorageRepository;
 import ru.ifellow.ebredichina.bookservice.service.BookStorageService;
 import ru.ifellow.ebredichina.bookservice.service.StorageService;
-
-
+import ru.ifellow.jschool.dto.BookInfoDto;
+import ru.ifellow.jschool.dto.BookStorageDto;
+import ru.ifellow.jschool.dto.BuyBookDto;
+import ru.ifellow.jschool.dto.CreateBookInfoDto;
+import ru.ifellow.jschool.exception.BookStorageNotFoundException;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -73,9 +71,13 @@ public class BookStorageServiceImpl implements BookStorageService, StorageServic
         return bookStorageCommonStorageService.getBookAmount(bookShopId, bookId);
     }
 
+    @Override
+    public void removeBook(UUID onlinePurchaseId, UUID bookId, int amount) {
+        bookStorageCommonStorageService.removeBookFromStorage(onlinePurchaseId, bookId, amount);
+    }
 
     @Override
-    public BookStorage selectsStorageForDelivery(List<BuyBookDto> customerList) {
+    public BookStorageDto selectsStorageForDelivery(List<BuyBookDto> customerList) {
         Map<UUID, Integer> customerMap = customerList
                 .stream()
                 .collect(Collectors.toMap(BuyBookDto::getBookId, BuyBookDto::getAmount));
@@ -97,6 +99,7 @@ public class BookStorageServiceImpl implements BookStorageService, StorageServic
                 .map(Map.Entry::getKey)
                 .map(id -> bookStorageRepository.findById(UUID.fromString(id)))
                 .map(Optional::get)
+                .map(bookStorageMapper::toBookStorageDto)
                 .orElseThrow(() -> new BookStorageNotFoundException("Склад для доставки не найден"));
 
     }

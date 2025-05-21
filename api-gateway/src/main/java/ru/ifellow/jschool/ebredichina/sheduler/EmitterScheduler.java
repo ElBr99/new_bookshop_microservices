@@ -4,10 +4,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
-import ru.ifellow.jschool.ebredichina.client.FavouriteBookClient;
-import ru.ifellow.jschool.ebredichina.dto.EmitterMessage;
-import ru.ifellow.jschool.ebredichina.dto.FavouriteBookDto;
-import ru.ifellow.jschool.ebredichina.dto.SendBookInfo;
+
+
+import ru.ifellow.jschool.client.FavouriteBookClient;
+import ru.ifellow.jschool.dto.EmitterMessage;
+import ru.ifellow.jschool.dto.FavouriteBookDto;
+import ru.ifellow.jschool.dto.SendBookInfo;
 import ru.ifellow.jschool.ebredichina.mapper.FavouriteBookDtoMapper;
 
 import java.io.IOException;
@@ -24,7 +26,6 @@ public class EmitterScheduler {
     private final FavouriteBookDtoMapper favouriteBookDtoMapper;
 
     @Scheduled(cron = "0 0 12 * * ?")
-    // @Scheduled(fixedRate = 1000L) для теста
     public void schedule() {
         subscribers.forEach((key, sseEmitter) -> {
 

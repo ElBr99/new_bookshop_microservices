@@ -3,8 +3,12 @@ package ru.ifellow.ebredichina.userserice.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import lombok.*;
-import ru.ifellow.ebredichina.userserice.enums.UserRole;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import ru.ifellow.jschool.enums.UserRole;
 
 import java.util.UUID;
 

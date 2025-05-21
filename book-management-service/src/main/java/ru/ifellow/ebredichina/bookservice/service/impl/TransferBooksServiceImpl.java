@@ -3,13 +3,14 @@ package ru.ifellow.ebredichina.bookservice.service.impl;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.ifellow.ebredichina.bookservice.dto.CreateRequestDto;
-import ru.ifellow.ebredichina.bookservice.exception.NotEnoughBooksException;
+
 import ru.ifellow.ebredichina.bookservice.mapper.RequestBookInfoToBookInfoMapper;
 import ru.ifellow.ebredichina.bookservice.model.BookInfo;
 import ru.ifellow.ebredichina.bookservice.model.BookStorage;
 import ru.ifellow.ebredichina.bookservice.model.OfflineBookShop;
 import ru.ifellow.ebredichina.bookservice.service.TransferBooksService;
+import ru.ifellow.jschool.dto.CreateRequestDto;
+import ru.ifellow.jschool.exception.NotEnoughBooksException;
 
 
 import java.util.List;

@@ -1,7 +1,8 @@
 package ru.ifellow.ebredichina.bookservice.service;
 
-import ru.ifellow.ebredichina.bookservice.dto.CreateRequestDto;
+
 import ru.ifellow.ebredichina.bookservice.model.BookInfo;
+import ru.ifellow.jschool.dto.CreateRequestDto;
 
 import java.util.List;
 import java.util.UUID;

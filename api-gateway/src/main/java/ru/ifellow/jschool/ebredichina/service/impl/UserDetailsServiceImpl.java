@@ -6,8 +6,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.ifellow.jschool.ebredichina.client.UserClient;
-import ru.ifellow.jschool.ebredichina.dto.userClientDto.GetUserDto;
+import ru.ifellow.jschool.client.UserClient;
+import ru.ifellow.jschool.dto.GetUserDto;
+
 
 import java.util.Collections;
 

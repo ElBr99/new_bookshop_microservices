@@ -3,9 +3,13 @@ package ru.ifellow.jschool.ebredichina.controller;
 import jakarta.validation.constraints.Pattern;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
-import ru.ifellow.jschool.ebredichina.dto.BookFinderDto;
-import ru.ifellow.jschool.ebredichina.dto.BookInfoDto;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import ru.ifellow.jschool.dto.BookFinderDto;
+import ru.ifellow.jschool.dto.BookInfoDto;
 import ru.ifellow.jschool.ebredichina.service.BookInfoClientService;
 
 import java.util.List;

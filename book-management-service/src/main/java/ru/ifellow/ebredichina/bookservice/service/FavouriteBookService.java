@@ -1,6 +1,7 @@
 package ru.ifellow.ebredichina.bookservice.service;
-import ru.ifellow.ebredichina.bookservice.dto.FavouriteBookDto;
 
+
+import ru.ifellow.jschool.dto.FavouriteBookDto;
 import java.util.List;
 import java.util.UUID;
 

@@ -4,9 +4,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-import ru.ifellow.jschool.ebredichina.dto.BookInfoDto;
-import ru.ifellow.jschool.ebredichina.dto.BookStorageDto;
-import ru.ifellow.jschool.ebredichina.dto.CreateBookInfoDto;
+
+
+import ru.ifellow.jschool.dto.BookInfoDto;
+import ru.ifellow.jschool.dto.BookStorageDto;
+import ru.ifellow.jschool.dto.CreateBookInfoDto;
 import ru.ifellow.jschool.ebredichina.service.BookStorageClientService;
 
 import java.util.List;

@@ -3,7 +3,7 @@ package ru.ifellow.jschool.ebredichina.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
-import ru.ifellow.jschool.ebredichina.dto.userClientDto.GetUserDto;
+
 import ru.ifellow.jschool.ebredichina.service.AuthenticationService;
 
 import java.util.Map;

@@ -1,7 +1,6 @@
 package ru.ifellow.ebredichina.userserice.service;
 
-import ru.ifellow.ebredichina.userserice.dto.GetUserDto;
-
+import ru.ifellow.jschool.dto.GetUserDto;
 import java.util.UUID;
 
 public interface UserService {

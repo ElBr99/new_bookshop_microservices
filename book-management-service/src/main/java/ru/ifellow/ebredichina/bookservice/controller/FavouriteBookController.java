@@ -4,8 +4,9 @@ package ru.ifellow.ebredichina.bookservice.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import ru.ifellow.ebredichina.bookservice.dto.FavouriteBookDto;
+
 import ru.ifellow.ebredichina.bookservice.service.FavouriteBookService;
+import ru.ifellow.jschool.dto.FavouriteBookDto;
 
 
 import java.util.List;

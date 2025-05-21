@@ -3,9 +3,11 @@ package ru.ifellow.jschool.ebredichina.service.impl;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.ifellow.jschool.ebredichina.client.TransferBooksClient;
-import ru.ifellow.jschool.ebredichina.dto.BookInfoDto;
-import ru.ifellow.jschool.ebredichina.dto.CreateRequestDto;
+
+
+import ru.ifellow.jschool.client.TransferBooksClient;
+import ru.ifellow.jschool.dto.BookInfoDto;
+import ru.ifellow.jschool.dto.CreateRequestDto;
 import ru.ifellow.jschool.ebredichina.service.TransferBooksClientService;
 
 import java.util.List;

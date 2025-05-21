@@ -2,12 +2,19 @@ package ru.ifellow.ebredichina.bookservice.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
-import ru.ifellow.ebredichina.bookservice.dto.BookInfoDto;
-import ru.ifellow.ebredichina.bookservice.dto.CreateBookInfoDto;
-import ru.ifellow.ebredichina.bookservice.dto.OfflineBookShopDto;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 import ru.ifellow.ebredichina.bookservice.service.StorageService;
-
+import ru.ifellow.jschool.dto.BookInfoDto;
+import ru.ifellow.jschool.dto.CreateBookInfoDto;
+import ru.ifellow.jschool.dto.OfflineBookShopDto;
 import java.util.List;
 import java.util.UUID;
 
@@ -44,5 +51,9 @@ public class OfflineBookShopController {
         offlineShopService.addBooksByPacks(shopId, createBookInfoDtoList);
     }
 
+    @PatchMapping
+    public void removeBookFromShop(@RequestParam UUID onlinePurchaseId, @RequestParam UUID bookId, @RequestParam int amount) {
+        offlineShopService.removeBook(onlinePurchaseId, bookId, amount);
+    }
 
 }

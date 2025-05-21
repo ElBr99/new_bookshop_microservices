@@ -6,7 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
-import ru.ifellow.ebredichina.bookservice.enums.BookGenre;
+import ru.ifellow.jschool.enums.BookGenre;
 
 
 import java.util.UUID;
