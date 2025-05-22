@@ -3,14 +3,15 @@ package ru.ifellow.ebredichina.bookservice.service.impl;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 import ru.ifellow.ebredichina.bookservice.exception.ExceptionThrower;
 import ru.ifellow.ebredichina.bookservice.model.AbsStorage;
 import ru.ifellow.ebredichina.bookservice.model.BookInfo;
 import java.util.List;
 import java.util.UUID;
 
-@RequiredArgsConstructor
 @Transactional
+@RequiredArgsConstructor
 public class CommonStorageService<T extends AbsStorage> {
 
     private final JpaRepository<T, UUID> commonRepository;

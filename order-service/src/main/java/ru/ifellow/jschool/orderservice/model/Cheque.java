@@ -36,8 +36,10 @@ public class Cheque {
     @JoinColumn(name = "order_id", referencedColumnName = "id")
     private Order order;
 
+    @Column(name = "offline_purchase_id")
     private UUID offlinePurchaseId;
 
+    @Column(name = "online_purchase_id")
     private UUID onlinePurchaseId;
 
     @Column(name = "customer_email")

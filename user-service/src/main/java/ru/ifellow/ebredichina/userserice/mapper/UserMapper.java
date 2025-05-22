@@ -3,6 +3,7 @@ package ru.ifellow.ebredichina.userserice.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import ru.ifellow.ebredichina.userserice.model.Customer;
+import ru.ifellow.ebredichina.userserice.model.StoreKeeper;
 import ru.ifellow.ebredichina.userserice.model.User;
 import ru.ifellow.jschool.dto.CreateCustomerDto;
 import ru.ifellow.jschool.dto.CreateEmployeeDto;
@@ -19,7 +20,7 @@ public abstract class UserMapper {
 
     public abstract GetUserDto fromUserToGetUserDto(User user);
 
-    public abstract User fromCreateEmployeeDtoToUser(CreateEmployeeDto createEmployeeDto);
+    public abstract StoreKeeper fromCreateEmployeeDtoToUser(CreateEmployeeDto createEmployeeDto);
 
 
 }

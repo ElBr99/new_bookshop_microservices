@@ -16,6 +16,8 @@ public interface ToBookInfoDtoMapper {
     @Mapping(target = "offlineBookShop", expression = "java(bookInfo.getOfflineBookShop() != null ? bookInfo.getOfflineBookShop().getId() : null)")
     BookInfoDto bookInfoToBookInfoDto(BookInfo bookInfo);
 
+    @Mapping(target = "bookStorage.id", source = "bookStorage")
+    @Mapping(target = "offlineBookShop.id", source = "offlineBookShop")
     BookInfo toBookInfo(BookInfoDto bookInfoDto);
 
     List<BookInfoDto> listBookInfoToBookInfoDto(List<BookInfo> bookInfoList);

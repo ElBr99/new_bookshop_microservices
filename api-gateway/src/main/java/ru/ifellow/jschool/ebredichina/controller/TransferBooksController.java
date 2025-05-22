@@ -20,14 +20,14 @@ public class TransferBooksController {
 
     private final TransferBooksClientService transferBooksService;
 
-    @PutMapping("/moveRequestedBooks")
+    @PutMapping("/moveRequestedBooks/{bookStorageId}")
     @ResponseStatus(HttpStatus.OK)
     @PreAuthorize("hasAnyAuthority('STOREKEEPER')")
     public void moveRequestedBooksFromStorageToShops(@PathVariable UUID bookStorageId, @RequestBody List<CreateRequestDto> requestDtoList) {
         transferBooksService.moveRequestedBooksFromStorageToShops(bookStorageId, requestDtoList);
     }
 
-    @PutMapping("/books-transfer")
+    @PutMapping("/books-transfer/{bookStorageId}/{bookShopId}")
     @ResponseStatus(HttpStatus.OK)
     public void moveBooks (@PathVariable UUID bookStorageId, @PathVariable UUID bookShopId, @RequestBody List<BookInfoDto> bookInfoDtos) {
         transferBooksService.transferBooksToShop(bookStorageId, bookShopId, bookInfoDtos);

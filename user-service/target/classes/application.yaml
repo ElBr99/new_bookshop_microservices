@@ -4,20 +4,23 @@ spring:
     username: sa
     password: password
     driver-class-name: org.h2.Driver
+    schema: classpath:init.sql
   application:
-    name: user-service
+    name: user_service
+
+  sql:
+    init:
+      data-locations: classpath:init.sql
 
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: validate
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
         show_sql: 'true'
         format_sql: 'true'
         default_schema: user_service
-        hbm2ddl.auto: validate
 
 
 server:

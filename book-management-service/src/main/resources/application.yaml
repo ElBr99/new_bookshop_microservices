@@ -4,21 +4,25 @@ spring:
     username: sa
     password: password
     driver-class-name: org.h2.Driver
+    schema: classpath:init.sql
   application:
     name: book-management-service
 
+  sql:
+    init:
+      data-locations: classpath:init.sql
+
   jpa:
     show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: validate
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
         show_sql: 'true'
         format_sql: 'true'
-        default_schema: book-management-service
-        hbm2ddl.auto: validate
-
+        default_schema: book_management_service
+  
 
 server:
   port: 7979

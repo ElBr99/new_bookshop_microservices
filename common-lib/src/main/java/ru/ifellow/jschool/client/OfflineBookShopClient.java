@@ -31,4 +31,5 @@ public interface OfflineBookShopClient {
 
     @PatchMapping("api/v1/book-shops")
     void removeBook(@RequestParam UUID onlinePurchaseId, @RequestParam UUID bookId, @RequestParam int amount);
+
 }

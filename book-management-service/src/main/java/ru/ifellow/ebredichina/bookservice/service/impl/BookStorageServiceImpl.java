@@ -1,6 +1,8 @@
 package ru.ifellow.ebredichina.bookservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.ifellow.ebredichina.bookservice.mapper.BookStorageMapper;
@@ -24,15 +26,24 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
-@RequiredArgsConstructor
 @Transactional
 public class BookStorageServiceImpl implements BookStorageService, StorageService<BookStorageDto> {
 
-    private final CommonStorageService<BookStorage> bookStorageCommonStorageService;
-    private final BookStorageRepository bookStorageRepository;
-    private final ToBookInfoMapper toBookInfoMapper;
-    private final ToBookInfoDtoMapper toBookInfoDtoMapper;
-    private final BookStorageMapper bookStorageMapper;
+    @Autowired
+    @Qualifier ("bookStorageCommonStorageService")
+    private CommonStorageService<BookStorage> bookStorageCommonStorageService;
+
+    @Autowired
+    private  BookStorageRepository bookStorageRepository;
+
+    @Autowired
+    private ToBookInfoMapper toBookInfoMapper;
+
+    @Autowired
+    private ToBookInfoDtoMapper toBookInfoDtoMapper;
+
+    @Autowired
+    private BookStorageMapper bookStorageMapper;
 
 
     @Override

@@ -13,7 +13,8 @@ import java.util.UUID;
 @AllArgsConstructor
 public class FavouriteBookDto {
 
-    private UUID favouriteBookId;
+    private UUID userId;
+    private UUID bookInfoId;
     private String title;
     private String author;
     private BookGenre genre;

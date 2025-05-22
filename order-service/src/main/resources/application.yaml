@@ -7,17 +7,27 @@ spring:
   application:
     name: order-service
 
+  sql:
+    init:
+      data-locations: classpath:init.sql
+
   jpa:
     show-sql: true
-    hibernate:
-      ddl-auto: validate
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
         show_sql: 'true'
         format_sql: 'true'
         default_schema: order_service
-        hbm2ddl.auto: validate
+
+feign:
+  book-management-service:
+   url: http://localhost:8080
+  order-service:
+   url: http://localhost:8080
+  user-service:
+    url: http://localhost:8080
+
 
 
 server:

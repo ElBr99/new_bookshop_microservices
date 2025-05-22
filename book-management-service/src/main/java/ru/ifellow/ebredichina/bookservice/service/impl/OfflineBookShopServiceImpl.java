@@ -2,11 +2,10 @@ package ru.ifellow.ebredichina.bookservice.service.impl;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
-
-
-
 import ru.ifellow.ebredichina.bookservice.mapper.OfflineBookShopMapper;
 import ru.ifellow.ebredichina.bookservice.mapper.ToBookInfoDtoMapper;
 import ru.ifellow.ebredichina.bookservice.mapper.ToBookInfoMapper;
@@ -23,13 +22,19 @@ import java.util.UUID;
 @Lazy
 @Service
 @Transactional
-@RequiredArgsConstructor
 public class OfflineBookShopServiceImpl implements StorageService<OfflineBookShopDto> {
 
-    private final CommonStorageService<OfflineBookShop> offlineBookShopDtoCommonStorageService;
-    private final ToBookInfoMapper toBookInfoMapper;
-    private final ToBookInfoDtoMapper toBookInfoDtoMapper;
-    private final OfflineBookShopMapper offlineBookShopMapper;
+    @Autowired
+    @Qualifier("offlineBookShopDtoCommonStorageService")
+    private CommonStorageService<OfflineBookShop> offlineBookShopDtoCommonStorageService;
+
+    @Autowired
+    private ToBookInfoMapper toBookInfoMapper;
+    @Autowired
+    private ToBookInfoDtoMapper toBookInfoDtoMapper;
+
+    @Autowired
+    private OfflineBookShopMapper offlineBookShopMapper;
 
     @Override
     public List<BookInfoDto> viewCurrentAssortment(UUID bookShopId) {

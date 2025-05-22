@@ -15,11 +15,11 @@ import java.util.UUID;
 @FeignClient(name = "transfer-book-client", url = "${feign.book-management-service.url}")
 public interface TransferBooksClient {
 
-    @PutMapping("api/v1/transferBooks/moveRequestedBooks")
+    @PutMapping("api/v1/transferBooks/moveRequestedBooks/{bookStorageId}")
     @ResponseStatus(HttpStatus.OK)
     void moveRequestedBooksFromStorageToShops(@PathVariable UUID bookStorageId, @RequestBody List<CreateRequestDto> requestDtoList);
 
-    @PutMapping("api/v1/transferBooks/books-transfer")
+    @PutMapping("api/v1/transferBooks/books-transfer/{bookStorageId}/{bookShopId}")
     @ResponseStatus(HttpStatus.OK)
     void moveBooks(@PathVariable UUID bookStorageId, @PathVariable UUID bookShopId, @RequestBody List<BookInfoDto> bookInfoDtos);
 }

@@ -1,6 +1,7 @@
 package ru.ifellow.jschool.orderservice.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.ifellow.jschool.client.BookStorageClient;

@@ -12,7 +12,8 @@ import java.util.List;
 public interface FavouriteBookMapper {
 
 
-    @Mapping(target = "favouriteBookId", source = "id")
+    @Mapping(target = "bookInfoId", source = "id.bookInfoId")
+    @Mapping(target = "userId", source = "id.userId")
     @Mapping(target = "title", source = "bookInfoFavourite.book.title")
     @Mapping(target = "author", source = "bookInfoFavourite.book.author")
     @Mapping(target = "genre", source = "bookInfoFavourite.book.genre")
