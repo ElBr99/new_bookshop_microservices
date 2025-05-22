@@ -4,17 +4,22 @@ spring:
     username: sa
     password: password
     driver-class-name: org.h2.Driver
-    schema: classpath:init.sql
+    schema: user_service
+    data: classpath:data.sql
+    initialization-mode: always
   application:
     name: user_service
 
+
   sql:
     init:
-      data-locations: classpath:init.sql
+      mode: always
 
   jpa:
+    defer-datasource-initialization: true
     show-sql: true
     hibernate:
+      ddl-auto: none
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
@@ -24,5 +29,5 @@ spring:
 
 
 server:
-  port: 8080
+  port: 7676
 

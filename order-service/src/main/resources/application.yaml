@@ -22,16 +22,16 @@ spring:
 
 feign:
   book-management-service:
-   url: http://localhost:8080
+   url: http://localhost:7979
   order-service:
-   url: http://localhost:8080
+   url: http://localhost:7575
   user-service:
-    url: http://localhost:8080
+    url: http://localhost:7676
 
 
 
 server:
-  port: 8080
+  port: 7575
 
 
 
